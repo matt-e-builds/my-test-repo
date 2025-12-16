@@ -25,7 +25,7 @@ jobs:
           role-to-assume: arn:aws-us-gov:iam::514397112278:role/project/project-github-actions-deploy-role
           aws-region: us-gov-west-1
           # Optional: specify role session name for audit trail
-          role-session-name: GitHubActions-${{ github.repository }}-${{ github.run_id }}
+          role-session-name: GitHubActions-${{ github.event.repository.name }}-${{ github.run_id }}
       
       - name: Package source code
         run: |
