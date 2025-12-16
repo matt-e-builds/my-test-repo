@@ -22,7 +22,7 @@ jobs:
       - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws-us-gov:iam::514397112278:role/project/project-github-actions-deploy-role
+          role-to-assume: arn:aws-us-gov:iam::514397112278:role/project/project-github-actions-test
           aws-region: us-gov-west-1
           # Optional: specify role session name for audit trail
           role-session-name: GitHubActions-${{ github.event.repository.name }}-${{ github.run_id }}
