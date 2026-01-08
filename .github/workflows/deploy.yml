@@ -24,6 +24,19 @@ jobs:
       ROLE_NAME: ${{ vars.ROLE_NAME != '' && vars.ROLE_NAME || 'project-github-actions-deploy-role' }}
     
     steps:
+      - name: Debug variables
+        run: |
+          echo "AWS Account: ${{ env.AWS_ACCOUNT_ID }}"
+          echo "Region: ${{ env.AWS_REGION }}"
+          echo "Partition: ${{ env.AWS_PARTITION }}"
+          echo "Role Name: ${{ env.ROLE_NAME }}"
+          echo "Bucket: ${{ env.BUCKET_NAME }}"
+          echo "Org-Repo: ${{ env.ORG_REPO }}"
+      
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      
       - name: Checkout code
         uses: actions/checkout@v4
       
